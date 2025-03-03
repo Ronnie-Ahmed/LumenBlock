@@ -22,9 +22,9 @@
 - [Starting a Minimal Template Chain](#starting-a-minimal-template-chain)
 
   - [Omni Node](#omni-node)
-  - [Minimal Template Node](#minimal-template-node)
+  - [Minimal Template Node](#lumenblock-node)
   - [Zombienet with Omni Node](#zombienet-with-omni-node)
-  - [Zombienet with Minimal Template Node](#zombienet-with-minimal-template-node)
+  - [Zombienet with Minimal Template Node](#zombienet-with-lumenblock-node)
   - [Connect with the Polkadot-JS Apps Front-End](#connect-with-the-polkadot-js-apps-front-end)
   - [Takeaways](#takeaways)
 
@@ -81,10 +81,10 @@ be used to run the minimal template's runtime. `polkadot-omni-node` binary crate
 
 Please see installation section on [crates.io/omni-node](https://crates.io/crates/polkadot-omni-node).
 
-#### Build `minimal-template-runtime`
+#### Build `lumenblock-runtime`
 
 ```sh
-cargo build -p minimal-template-runtime --release
+cargo build -p lumenblock-runtime --release
 ```
 
 #### Install `staging-chain-spec-builder`
@@ -95,7 +95,7 @@ Please see the installation section at [`crates.io/staging-chain-spec-builder`](
 
 ```sh
 chain-spec-builder create --relay-chain "dev" --para-id 1000 --runtime \
-    target/release/wbuild/minimal-template-runtime/minimal_template_runtime.wasm named-preset development
+    target/release/wbuild/lumenblock-runtime/lumenblock_runtime.wasm named-preset development
 ```
 
 **Note**: the `relay-chain` and `para-id` flags are extra bits of information required to
@@ -127,15 +127,15 @@ and has as entry point the node binary:
 docker build . -t polkadot-sdk-minimal-template
 ```
 
-#### Start the `minimal-template-node`
+#### Start the `lumenblock-node`
 
-The `minimal-template-node` has dependency on the `minimal-template-runtime`. It will use
-the `minimal_template_runtime::WASM_BINARY` constant (which holds the WASM blob as a byte
+The `lumenblock-node` has dependency on the `lumenblock-runtime`. It will use
+the `lumenblock_runtime::WASM_BINARY` constant (which holds the WASM blob as a byte
 array) for chain spec building, while starting. This is in contrast to Omni Node which doesn't
 depend on a specific runtime, but asks for the chain spec at startup.
 
 ```sh
-<target/release/path/to/minimal-template-node> --tmp --consensus manual-seal-3000
+<target/release/path/to/lumenblock-node> --tmp --consensus manual-seal-3000
 # or via docker
 docker run --rm polkadot-sdk-minimal-template
 ```
@@ -169,7 +169,7 @@ default_args = ["--dev"]
 zombienet --provider native spawn zombienet-omni-node.toml
 ```
 
-### Zombienet with `minimal-template-node`
+### Zombienet with `lumenblock-node`
 
 For this one we just need to have `zombienet` installed and run:
 

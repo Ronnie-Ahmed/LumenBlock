@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! A minimal runtime that includes the template [`pallet`](`pallet_minimal_template`).
+//! A minimal runtime that includes the template [`pallet`](`lumenblock_pallet`).
 
 #![cfg_attr(not(feature = "std"), no_std)]
 
@@ -86,8 +86,8 @@ pub mod genesis_config_presets {
 /// The runtime version.
 #[runtime_version]
 pub const VERSION: RuntimeVersion = RuntimeVersion {
-	spec_name: alloc::borrow::Cow::Borrowed("minimal-template-runtime"),
-	impl_name: alloc::borrow::Cow::Borrowed("minimal-template-runtime"),
+	spec_name: alloc::borrow::Cow::Borrowed("lumenblock-runtime"),
+	impl_name: alloc::borrow::Cow::Borrowed("lumenblock-runtime"),
 	authoring_version: 1,
 	spec_version: 0,
 	impl_version: 1,
@@ -163,7 +163,7 @@ mod runtime {
 
 	/// A minimal pallet template.
 	#[runtime::pallet_index(5)]
-	pub type Template = pallet_minimal_template::Pallet<Runtime>;
+	pub type Template = lumenblock_pallet::Pallet<Runtime>;
 }
 
 parameter_types! {
@@ -204,7 +204,7 @@ impl pallet_transaction_payment::Config for Runtime {
 }
 
 // Implements the types required for the template pallet.
-impl pallet_minimal_template::Config for Runtime {}
+impl lumenblock_pallet::Config for Runtime {}
 
 type Block = frame::runtime::types_common::BlockOf<Runtime, TxExtension>;
 type Header = HeaderFor<Runtime>;

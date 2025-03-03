@@ -1,5 +1,5 @@
 [package]
-name = "minimal-template-node"
+name = "lumenblock-node"
 description = "A minimal Substrate-based Substrate node, ready for hacking."
 version = "0.1.0"
 license = "Unlicense"
@@ -21,7 +21,7 @@ futures-timer = { workspace = true }
 jsonrpsee = { features = ["server"], workspace = true }
 serde_json = { workspace = true, default-features = true }
 polkadot-sdk = { workspace = true, features = ["experimental", "node"] }
-minimal-template-runtime.workspace = true
+lumenblock-runtime.workspace = true
 
 [build-dependencies]
 polkadot-sdk = { workspace = true, features = ["substrate-build-script-utils"] }
@@ -29,6 +29,6 @@ polkadot-sdk = { workspace = true, features = ["substrate-build-script-utils"] }
 [features]
 default = ["std"]
 std = [
-	"minimal-template-runtime/std",
+	"lumenblock-runtime/std",
 	"polkadot-sdk/std",
 ]

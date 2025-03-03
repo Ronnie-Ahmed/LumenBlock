@@ -23,7 +23,7 @@
 #![warn(missing_docs)]
 
 use jsonrpsee::RpcModule;
-use minimal_template_runtime::interface::{AccountId, Nonce, OpaqueBlock};
+use lumenblock_runtime::interface::{AccountId, Nonce, OpaqueBlock};
 use polkadot_sdk::{
 	sc_transaction_pool_api::TransactionPool,
 	sp_blockchain::{Error as BlockChainError, HeaderBackend, HeaderMetadata},

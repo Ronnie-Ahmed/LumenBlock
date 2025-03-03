@@ -61,5 +61,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            target/release/minimal-template-node
-            target/release/wbuild/minimal-template-runtime/minimal_template_runtime.compact.compressed.wasm
+            target/release/lumenblock-node
+            target/release/wbuild/lumenblock-runtime/lumenblock_runtime.compact.compressed.wasm

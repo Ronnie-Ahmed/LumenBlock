@@ -6955,6 +6955,40 @@ dependencies = [
 ]
 
 [[package]]
+name = "lumenblock-node"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "docify",
+ "futures",
+ "futures-timer",
+ "jsonrpsee 0.24.8",
+ "lumenblock-runtime",
+ "polkadot-sdk",
+ "serde_json",
+]
+
+[[package]]
+name = "lumenblock-pallet"
+version = "0.1.0"
+dependencies = [
+ "parity-scale-codec",
+ "polkadot-sdk",
+ "scale-info",
+]
+
+[[package]]
+name = "lumenblock-runtime"
+version = "0.1.0"
+dependencies = [
+ "lumenblock-pallet",
+ "parity-scale-codec",
+ "polkadot-sdk",
+ "scale-info",
+ "serde_json",
+]
+
+[[package]]
 name = "lz4"
 version = "1.28.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -7135,31 +7169,6 @@ name = "minimal-lexical"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "68354c5c6bd36d73ff3feceb05efa59b6acb7626617f4962be322a825e61f79a"
-
-[[package]]
-name = "minimal-template-node"
-version = "0.1.0"
-dependencies = [
- "clap",
- "docify",
- "futures",
- "futures-timer",
- "jsonrpsee 0.24.8",
- "minimal-template-runtime",
- "polkadot-sdk",
- "serde_json",
-]
-
-[[package]]
-name = "minimal-template-runtime"
-version = "0.1.0"
-dependencies = [
- "pallet-minimal-template",
- "parity-scale-codec",
- "polkadot-sdk",
- "scale-info",
- "serde_json",
-]
 
 [[package]]
 name = "miniz_oxide"
@@ -8764,15 +8773,6 @@ dependencies = [
  "scale-info",
  "sp-core",
  "sp-runtime",
-]
-
-[[package]]
-name = "pallet-minimal-template"
-version = "0.1.0"
-dependencies = [
- "parity-scale-codec",
- "polkadot-sdk",
- "scale-info",
 ]
 
 [[package]]

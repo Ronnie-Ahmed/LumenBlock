@@ -1,5 +1,5 @@
 [package]
-name = "pallet-minimal-template"
+name = "lumenblock-pallet"
 description = "A minimal pallet built with FRAME, part of Polkadot Sdk."
 version = "0.1.0"
 license = "Unlicense"
